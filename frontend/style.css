@@ -1,0 +1,300 @@
+/* =================== GLOBAL =================== */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+    --primary-color: #000;
+    --secondary-color: #fff;
+    --accent-color: #00BF63;
+    --light-accent-color: #E6FFE6;
+    --card-bg-color: #F8F8F8;
+    --font-family-lexend: "Lexend", sans-serif;
+    --padding-base: 1rem;
+    --gap-base: 1rem;
+}
+
+* {
+    font-family: var(--font-family-lexend);
+    font-optical-sizing: auto;
+    margin: 0;
+    padding: 0;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* =================== UTILITY CLASSES =================== */
+
+.btn {
+    display: inline-block;
+    padding: var(--padding-base) 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 9px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.6s ease, color 0.6s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--accent-color);
+}
+
+.btn-primary:hover {
+    background-color: #008044;
+    transform: scale(1.05);
+    border-color: #008044;
+}
+
+.btn-login,
+.btn-dashboard {
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.btn-login:hover,
+.btn-dashboard:hover {
+    background-color: var(--light-accent-color);
+    transform: scale(1.05);
+}
+
+.btn-buy {
+    border: 1px solid var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.btn-buy:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.section-title {
+    font-weight: 800;
+    font-size: clamp(2rem, 8vw, 7rem);
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+/* =================== HEADER & NAVBAR =================== */
+.header {
+    background-color: var(--secondary-color);
+    border-bottom: 3px solid #404040;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4rem;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: var(--gap-base);
+}
+
+.nav-links li a {
+    display: block;
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    padding: 15px 14px;
+    text-decoration: none;
+    transition: color 0.8s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--accent-color);
+    border-radius: 17px;
+}
+
+.header-btns {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-base);
+}
+
+.header-btns .btn {
+    padding: 10px 15px;
+}
+
+/* =================== BACKGROUND EFFECT =================== */
+.bg-blur {
+    height: 0;
+    min-width: 30rem;
+    position: absolute;
+    bottom: 16%;
+    right: 0;
+    box-shadow: 0 0 700px 25px var(--accent-color);
+    opacity: 0.6;
+    animation: bg 5s infinite;
+}
+
+@keyframes bg {
+    0% { bottom: 0px; }
+    25% { bottom: 200px; }
+}
+
+/* =================== SECTIONS =================== */
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.hero-one h1 {
+    font-weight: 300;
+    font-size: clamp(2rem, 8vw, 7rem);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.hero-two {
+    padding: 80px 40px;
+    background-color: var(--secondary-color);
+}
+
+.cards-title {
+  color: black;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: box-shadow 0.8s ease-out, transform 1s ease-out;
+    width: clamp(250px, 30%, 400px);
+    border-radius: 14px;
+    display: flex;
+    background-color: var(--card-bg-color);
+    overflow: hidden;
+    color: var(--primary-color);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card h2 {
+    font-size: 40px;
+    padding: 12px;
+}
+
+.card p {
+    font-size: 20px;
+    padding: 12px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+    transform: scale(1.02);
+}
+
+.pen-section {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 80px 40px;
+    text-align: center;
+
+}
+
+.section-title {
+  color: rgb(0, 222, 141);
+}
+
+.pen-description {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+}
+
+.pen-content a {
+    margin-top: 2rem;
+    transition: 0.8s ;
+}
+
+.appearagag  {
+    opacity: 0;
+}
+
+
+/* =================== MEDIA QUERIES =================== */
+@media (max-width: 1024px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 2rem;
+        gap: 1rem;
+    }
+    .header-btns {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .nav-links {
+        gap: 10px;
+    }
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .card {
+        width: 90%;
+    }
+    .hero-one h1 {
+        font-size: clamp(2.5rem, 10vw, 5rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-one h1, .section-title {
+        font-size: clamp(2rem, 10vw, 4rem);
+    }
+    .bg-blur {
+        opacity: 0;
+        display: none;
+    }
+}
+
+/* =================== ANIMATIONS =================== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
